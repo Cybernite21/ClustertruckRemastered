@@ -10,9 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 2122869350627335361}
   - component: {fileID: 1602756733305128570}
-  m_Layer: 0
+  - component: {fileID: 919132148110667261}
+  - component: {fileID: 4828017573056853338}
+  m_Layer: 9
   m_Name: lowPolyTruck
-  m_TagString: Untagged
+  m_TagString: truck
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42,10 +44,39 @@ BoxCollider:
   m_GameObject: {fileID: 1602756733305128571}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 2.2178864, y: 2.4686584, z: 7.9133425}
   m_Center: {x: -0.015356779, y: 0.8522115, z: -1.0813565}
+--- !u!114 &919132148110667261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602756733305128571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b39166545a64c35459e8e1ee9238068d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 1
+--- !u!54 &4828017573056853338
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602756733305128571}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4796843237222260980
 GameObject:
   m_ObjectHideFlags: 0
@@ -59,9 +90,9 @@ GameObject:
   - component: {fileID: 1194902627053469050}
   - component: {fileID: 4796843237222260979}
   - component: {fileID: 4796843237222260978}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Back
-  m_TagString: Untagged
+  m_TagString: truck
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -177,9 +208,9 @@ GameObject:
   - component: {fileID: 6348185467230786972}
   - component: {fileID: 6348185467230786973}
   - component: {fileID: 6348185467230786974}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Front
-  m_TagString: Untagged
+  m_TagString: truck
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -304,12 +335,12 @@ HingeJoint:
     targetVelocity: 0
     force: 0
     freeSpin: 0
-  m_UseLimits: 0
+  m_UseLimits: 1
   m_Limits:
-    min: 0
-    max: 0
-    bounciness: 0
-    bounceMinVelocity: 0.2
+    min: -5.5020437
+    max: 38.311634
+    bounciness: 1
+    bounceMinVelocity: 0.1
     contactDistance: 0
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
