@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b39166545a64c35459e8e1ee9238068d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 1
+  movementSpeed: 10
 --- !u!54 &4828017573056853338
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -324,7 +324,7 @@ HingeJoint:
   m_Anchor: {x: 0, y: 0.017021239, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.000000015591963, y: -0.041077785, z: 0.003831222}
+  m_ConnectedAnchor: {x: 0.00000001529394, y: -0.041077785, z: 0.003831222}
   m_UseSpring: 1
   m_Spring:
     spring: 2
