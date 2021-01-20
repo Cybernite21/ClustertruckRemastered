@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseSensitivity: 100
-  moveSpeed: 24
+  moveSpeed: 18
   groundDistance: 0.4
   jumpPower: 5
   groundMask:
@@ -217,7 +217,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!136 &497791994
 CapsuleCollider:
@@ -261,3 +261,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlatform: 0
   otherObject: {fileID: 0}
+  rb: {fileID: 0}

@@ -26,9 +26,18 @@ public class FpsController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+    }
 
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+    void FixedUpdate()
+    {
+        movement();
+    }
+
+    void movement()
+    {
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.fixedDeltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.fixedDeltaTime;
         float moveX = Input.GetAxis("Horizontal");
         float moveZ = Input.GetAxis("Vertical");
 
@@ -42,7 +51,7 @@ public class FpsController : MonoBehaviour
         //rb.MovePosition(playerBody.position + move * moveSpeed * Time.deltaTime);
         playerBody.position += move * moveSpeed * Time.deltaTime;
 
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             rb.AddForce(playerBody.transform.up * jumpPower, ForceMode.Impulse);
         }

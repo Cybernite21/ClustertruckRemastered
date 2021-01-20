@@ -21,6 +21,16 @@ public class TruckMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+    }
+
+    void FixedUpdate()
+    {
+        movement();
+    }
+
+    void movement()
+    {
         //transform.GetChild(1).transform.localRotation = Quaternion.Euler(new Vector3(transform.GetChild(1).transform.localRotation.x, transform.GetChild(1).transform.localRotation.y, transform.GetChild(1).transform.localRotation.z + Random.Range(-.1f, .1f)));
         rot += Random.Range(-rotAmplitude, rotAmplitude) * Time.deltaTime * 2;
         rot = Mathf.Clamp(rot, -3f, 3f);
