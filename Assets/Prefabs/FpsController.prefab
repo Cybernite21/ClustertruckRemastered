@@ -159,9 +159,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mouseSensitivity: 100
-  moveSpeed: 12
+  moveSpeed: 24
   groundDistance: 0.4
-  jumpPower: 20
+  jumpPower: 5
   groundMask:
     serializedVersion: 2
     m_Bits: 256
