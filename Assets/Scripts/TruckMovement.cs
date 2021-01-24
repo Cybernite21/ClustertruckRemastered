@@ -35,7 +35,8 @@ public class TruckMovement : MonoBehaviour
         rot += Random.Range(-rotAmplitude, rotAmplitude) * Time.deltaTime * 2;
         rot = Mathf.Clamp(rot, -3f, 3f);
         //transform.GetChild(1).transform.Rotate(0, rot, 0);
-        transform.GetChild(1).transform.localRotation = Quaternion.Euler(new Vector3(-90, 0, rot));
+        //transform.GetChild(1).transform.localRotation = Quaternion.Euler(new Vector3(-90, 0, rot));
+        transform.GetChild(1).GetComponent<Rigidbody>().MoveRotation(Quaternion.Euler(new Vector3(-90, 0, rot)));
         //transform.position += -transform.GetChild(1).transform.up * movementSpeed * Time.deltaTime;
         transform.GetChild(1).GetComponent<Rigidbody>().MovePosition(transform.GetChild(1).transform.position + -transform.GetChild(1).transform.up * movementSpeed * Time.deltaTime);
     }

@@ -21,6 +21,7 @@ public class FpsController : MonoBehaviour
     void Start()
     {
         rb = playerBody.GetComponent<Rigidbody>();
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
@@ -47,9 +48,10 @@ public class FpsController : MonoBehaviour
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
 
         transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
-        playerBody.Rotate(Vector3.up * mouseX);
-        //rb.MovePosition(playerBody.position + move * moveSpeed * Time.deltaTime);
-        playerBody.position += move * moveSpeed * Time.deltaTime;
+        //playerBody.Rotate(Vector3.up * mouseX);
+        rb.MoveRotation(playerBody.rotation * Quaternion.Euler(Vector3.up * mouseX));
+        rb.MovePosition(playerBody.position + move * moveSpeed * Time.deltaTime);
+        //playerBody.position += move * moveSpeed * Time.deltaTime;
 
         if (Input.GetKeyDown(KeyCode.Space))
         {

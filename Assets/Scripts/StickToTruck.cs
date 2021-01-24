@@ -33,7 +33,7 @@ public class StickToTruck : MonoBehaviour
         if (isPlatform)
         {
             //rb.MovePosition(transform.position + move * moveSpeed * Time.fixedDeltaTime+ -otherObject.transform.up * otherObject.transform.parent.GetComponent<TruckMovement>().movementSpeed * Time.fixedDeltaTime);
-            transform.position += -otherObject.transform.up * truckMoveSpeed*3/5 * Time.deltaTime;
+            //transform.position += -otherObject.transform.up * truckMoveSpeed*3/5 * Time.deltaTime;
             //rb.MovePosition(otherObject.transform.position + offset);
         }
     }
@@ -56,5 +56,18 @@ public class StickToTruck : MonoBehaviour
         isPlatform = false;
         //rb.isKinematic = false;
         //transform.parent = null;
+    }
+
+    void OnCollisionStay(Collision collision)
+    {
+        if(collision.gameObject.tag == "truck")
+        {
+            transform.parent = collision.transform;
+        }
+    }
+
+    void OnCollisionExit(Collision collision)
+    {
+        transform.parent = null;
     }
 }
